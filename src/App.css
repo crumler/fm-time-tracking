@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+
+/* ==================== */
+/* CUSTOM PROPERTIES    */
+/* ==================== */
+
+:root {
+  /* ----- Colors ----- */
+  --clr-profile: hsl(246, 80%, 60%);
+  --clr-work: hsl(15, 100%, 70%);
+  --clr-play: hsl(195, 74%, 62%);
+  --clr-study: hsl(348, 100%, 68%);
+  --clr-exercise: hsl(145, 58%, 55%);
+  --clr-social: hsl(264, 64%, 52%);
+  --clr-self-care: hsl(43, 84%, 65%);
+
+  --clr-main-bg: hsl(226, 43%, 10%);
+  --clr-component-bg: hsl(235, 46%, 20%);
+  --clr-component-bg-hover: hsla(236, 41%, 34%, 1);
+  --clr-last-week: hsl(236, 100%, 87%);
+
+  --clr-white: hsla(0, 0%, 100%, 1);
+
+  
+  /* ----- Typography ----- */
+  --ff-primary: 'Rubik', sans-serif;
+
+  --fs-s: 0.833rem;
+  --fs-l: 1.333rem;
+  --fs-xl: 1.778rem;
+
+  --fw-s: 300;
+  --fw-l: 500;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ==================== */
+/* RESETS               */
+/* ==================== */
+
+*,*::before,*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ==================== */
+/* GLOBAL               */
+/* ==================== */
+
+html {
+  font-family: var(--ff-primary);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--clr-white);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+body {
+  background-color: var(--clr-main-bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==================== */
+/* UTILITIES            */
+/* ==================== */
+
+/* ----- Colors ----- */
+.profile-bg { background-color: var(--clr-profile); }
+.work-bg { background-color: var(--clr-work); }
+.play-bg { background-color: var(--clr-play); }
+.study-bg { background-color: var(--clr-study); }
+.exercise-bg { background-color: var(--clr-exercise); }
+.social-bg { background-color: var(--clr-social); }
+.self-care-bg { background-color: var(--clr-self-care); }
+
+.accent-color { color: var(--clr-last-week); }
+
+/* ----- Typography ----- */
+.fs-s { font-size: var(--fs-s); }
+.fs-l { font-size: var(--fs-l); }
+.fs-xl { font-size: var(--fs-xl); }
+
+.fw-s { font-weight: var(--fw-s); }
+.fw-l { font-weight: var(--fw-l); }
+
+/* ----- Layout ----- */
+.container {
+  width: 90%;
+  max-width: 1110px;
+  margin-inline: auto;
+}
+
+.flex { display: flex; }
+.grid { display: grid; }
+
+.component-border { border-radius: 0.833rem; }
+
+.component-container {
+
+}
+
+.sub-container {
+  background-color: var(--clr-component-bg);
+}
+
+/* ==================== */
+/* MAIN                 */
+/* ==================== */
+
+/* ----- Profile container ----- */
+.profile-container {
+  position: relative;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 5;
+  margin-top: 4.5rem;
+  padding: 1.944em 2.167em 1.889em 1.778em;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-image-container img {
+  width: 65%;
+  border: 3px solid #D8D8D8;
+  border-radius: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-text-container { width: 150%; }
+
+.profile-sub-container {
+  transform: translateY(-1rem);
+  z-index: 0;
+}
+
+.filter-container {
+  justify-content: space-around;
+  padding: 2.2rem 0 1.333rem 0;
 }
